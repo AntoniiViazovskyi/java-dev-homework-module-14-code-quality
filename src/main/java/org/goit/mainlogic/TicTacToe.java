@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class TicTacToe {
 
-    private final Scanner scan = new Scanner(System.in);
+    private static final Scanner scan = new Scanner(System.in);
+    private static final char[] box = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
     private int winner;
-    boolean boxAvailable = false;
-    boolean boxEmpty = false;
+    private boolean boxAvailable = false;
+    private static boolean boxEmpty = false;
     public void setWinner(int winner) {this.winner = winner;}
     public boolean isBoxAvailable() {return boxAvailable;}
     public Scanner getScan() {return scan;}
-    public char[] getBox() {return box;}
 
-    private final char[] box = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    public char[] getBox() {return box;}
 
      boolean checkStrikeForWin(char c) {
         return (box[0] == c && box[1] == c && box[2] == c)
@@ -34,7 +34,7 @@ public class TicTacToe {
         System.out.printf(" %s | %s | %s %n%n", box[6], box[7], box[8]);
     }
 
-    void hideFieldNumbers() {
+    static void hideFieldNumbers() {
         if (!boxEmpty) {
             for (int i = 0; i < 9; i++)
                 box[i] = ' ';
