@@ -2,12 +2,13 @@ package org.goit.mainlogic;
 
 import org.goit.players.ComputerRandomPlayer;
 import org.goit.players.HumanPlayer;
+import org.goit.players.TicTacPoePlayeable;
 
 public class App {
     public static void main(String[] args) {
         TicTacToe game = new TicTacToe();
-        HumanPlayer human = new HumanPlayer(game);
-        ComputerRandomPlayer computer = new ComputerRandomPlayer(game);
+        TicTacPoePlayeable human = new HumanPlayer(game);
+        TicTacPoePlayeable computer = new ComputerRandomPlayer(game);
 
         while (true) {
             game.showGameField();
