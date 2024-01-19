@@ -12,7 +12,7 @@ public class App {
 
         while (true) {
             game.showGameField();
-            game.hideFieldNumbers();
+            TicTacToe.hideFieldNumbers();
             if (game.findWinner()) {
                 break;
             }
